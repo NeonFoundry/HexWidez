@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="HexWide.Tests/HexWide.Tests.csproj" />
+  <Project Path="HexWide/HexWide.csproj" />
+</Solution>
