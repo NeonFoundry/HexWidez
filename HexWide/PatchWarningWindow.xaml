@@ -1,0 +1,24 @@
+<Window x:Class="HexWide.PatchWarningWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Warning" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="4">
+            <TextBlock FontWeight="Bold" FontSize="16" Text="Warning" Margin="0,0,0,8" />
+            <TextBlock TextWrapping="Wrap" Margin="0,0,0,8">
+                This utility modifies executable files. A backup will be created automatically, but compatibility of the modified exe cannot be guaranteed. Use at your own risk.
+            </TextBlock>
+            <CheckBox x:Name="chkDontShow" Content="Don't show this again." />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button x:Name="btnOk" Width="90" Margin="4" IsDefault="True" Click="Ok_Click">OK</Button>
+            <Button x:Name="btnCancel" Width="90" Margin="4" IsCancel="True" Click="Cancel_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

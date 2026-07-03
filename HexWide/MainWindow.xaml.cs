@@ -30,6 +30,22 @@ namespace HexWide
             ShowStatus("Select an executable to get started.", false);
         }
 
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsWindow = new SettingsWindow { Owner = this };
+            var result = settingsWindow.ShowDialog();
+            if (result == true)
+            {
+                // reload settings and update UI
+                var settings = AppSettingsLoader.Load();
+                var newRes = settings.Resolutions;
+                _viewModel.UpdateResolutionOptions(newRes);
+                comboResolutions.ItemsSource = _viewModel.AvailableResolutions;
+                if (comboResolutions.Items.Count > 0)
+                    comboResolutions.SelectedIndex = 0;
+            }
+        }
+
         private void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
             var picker = new FilePickerWindow
@@ -65,6 +81,29 @@ namespace HexWide
                 ShowStatus(validation.ErrorMessage!, true);
                 return;
             }
+
+            // Show one-time patch warning if enabled in settings
+            try
+            {
+                var settings = AppSettingsLoader.Load();
+                if (settings.ShowPatchWarning)
+                {
+                    var warn = new PatchWarningWindow { Owner = this };
+                    var dlg = warn.ShowDialog();
+                    if (dlg != true)
+                    {
+                        ShowStatus("Patch cancelled.", true);
+                        return;
+                    }
+
+                    if (warn.DontShowAgain)
+                    {
+                        settings.ShowPatchWarning = false;
+                        try { AppSettingsLoader.Save(settings); } catch { }
+                    }
+                }
+            }
+            catch { }
 
             _patchCancellationTokenSource?.Cancel();
             _patchCancellationTokenSource = new CancellationTokenSource();

@@ -160,6 +160,78 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="TechSettingsButtonStyle"
+       TargetType="Button"
+       BasedOn="{StaticResource CaptionButtonStyle}">
+
+            <Setter Property="Foreground" Value="#00F7FF"/>
+            <Setter Property="Background" Value="#080014"/>
+            <Setter Property="BorderBrush" Value="#00F7FF"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1.5"
+                        Padding="4"
+                        CornerRadius="2">
+
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="Glow"
+                                          Color="#00F7FF"
+                                          BlurRadius="14"
+                                          ShadowDepth="0"
+                                          Opacity="0.65"/>
+                            </Border.Effect>
+
+                            <Grid RenderTransformOrigin="0.5,0.5">
+                                <Grid.RenderTransform>
+                                    <RotateTransform x:Name="IconRotate" Angle="0"/>
+                                </Grid.RenderTransform>
+
+                                <TextBlock Text="⛭"
+                                   FontSize="17"
+                                   FontWeight="Bold"
+                                   Foreground="#00F7FF"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever"
+                                        AutoReverse="True">
+                                        <DoubleAnimation Storyboard.TargetName="Glow"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0.35"
+                                                 To="0.95"
+                                                 Duration="0:0:1.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="Glow"
+                                                 Storyboard.TargetProperty="BlurRadius"
+                                                 From="8"
+                                                 To="20"
+                                                 Duration="0:0:1.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#001C24"/>
+                                <Setter TargetName="bd" Property="BorderBrush" Value="#FF06B5"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#00F7FF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <wc:WindowChrome.WindowChrome>
@@ -255,7 +327,7 @@
             </Border>
 
             <!-- Custom title bar (Windows 11 style) placed last so property elements remain valid -->
-            <Grid Grid.Row="0" x:Name="TitleBar" VerticalAlignment="Stretch" Margin="28,0,0,0" PreviewMouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Background="#F9F002" Panel.ZIndex="100" Cursor="SizeAll">
+            <Grid Grid.Row="0" x:Name="TitleBar" VerticalAlignment="Stretch" Margin="28,0,0,0" PreviewMouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Background="#F9F002" Panel.ZIndex="100" Cursor="Arrow">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
@@ -267,6 +339,10 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,28,0">
+                    <!--<Button x:Name="SettingsButton" Style="{StaticResource CaptionButtonStyle}" Margin="4,0,4,0" Click="SettingsButton_Click" ToolTip="Settings" wc:WindowChrome.IsHitTestVisibleInChrome="True">-->
+                <Button x:Name="SettingsButton" Style="{StaticResource TechSettingsButtonStyle}" Margin="4,0,4,0" Click="SettingsButton_Click" ToolTip="Settings" wc:WindowChrome.IsHitTestVisibleInChrome="True">
+                <TextBlock Text="⚙" Foreground="#000000" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
                 <Button x:Name="MinimizeButton" Style="{StaticResource CaptionButtonStyle}" Margin="4,0,4,0" Click="MinimizeButton_Click" ToolTip="Minimize" wc:WindowChrome.IsHitTestVisibleInChrome="True">
                         <Path Data="M 0 6 L 12 6" Stroke="#13010C" StrokeThickness="2" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Button>
