@@ -84,14 +84,16 @@ public sealed class PatchService : IPatchService
         byte[] originalBytes = _fileSystem.ReadAllBytes(filePath);
         byte[] patchedBytes = (byte[])originalBytes.Clone();
 
+        var settings = AppSettingsLoader.Load();
+
         var operations = new List<HexPatchOperation>(_operations)
         {
-            new("aspect-ratio", "3B 8E E3 3F", resolutionHex)
+            new("aspect-ratio", settings.AspectFindHex ?? "3B 8E E3 3F", resolutionHex)
         };
 
         if (includeFovFix)
         {
-            operations.Add(new("fov-compensation", "35 FA 0E 3C AC C5 27 37 6F", "35 FA 3E 3C AC C5 27 37 6F"));
+            operations.Add(new("fov-compensation", settings.FovFindHex ?? "35 FA 0E 3C AC C5 27 37 6F", settings.FovReplaceHex ?? "35 FA 3E 3C AC C5 27 37 6F"));
         }
 
         int total = operations.Count();

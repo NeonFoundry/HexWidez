@@ -1,0 +1,55 @@
+<Window x:Class="HexWide.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="480" Width="720" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Resolutions" Margin="0,0,12,0">
+                <DockPanel>
+                    <DataGrid x:Name="resolutionsGrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Hex Value" Binding="{Binding Hex}" Width="2*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,8,0,0">
+                        <Button x:Name="addResolutionButton" Content="Add" Width="84" Margin="0,0,8,0" Click="AddResolutionButton_Click"/>
+                        <Button x:Name="removeResolutionButton" Content="Remove" Width="84" Click="RemoveResolutionButton_Click"/>
+                    </StackPanel>
+                </DockPanel>
+            </GroupBox>
+
+            <StackPanel Grid.Column="1">
+                <GroupBox Header="Patch Find/Replace" Margin="0,0,0,12">
+                    <StackPanel Margin="8">
+                        <TextBlock Text="Aspect ratio find hex"/>
+                        <TextBox x:Name="txtAspectFind" Margin="0,4,0,8"/>
+
+                        <TextBlock Text="FOV find hex"/>
+                        <TextBox x:Name="txtFovFind" Margin="0,4,0,8"/>
+
+                        <TextBlock Text="FOV replace hex"/>
+                        <TextBox x:Name="txtFovReplace" Margin="0,4,0,8"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="saveButton" Content="Save" Width="92" Margin="0,0,8,0" Click="SaveButton_Click"/>
+                    <Button x:Name="cancelButton" Content="Cancel" Width="92" Click="CancelButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Grid.Row="1" Text="Changes are saved to appsettings.json in the application folder." Foreground="Gray" Margin="2" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

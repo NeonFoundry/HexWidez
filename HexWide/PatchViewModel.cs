@@ -11,7 +11,7 @@ public sealed record PatchValidationResult(bool IsValid, string? ErrorMessage, s
 public sealed class PatchViewModel
 {
     private readonly IPatchService _patchService;
-    private readonly IReadOnlyDictionary<string, string> _resolutionOptions;
+    private IReadOnlyDictionary<string, string> _resolutionOptions;
 
     public PatchViewModel(IPatchService patchService, IReadOnlyDictionary<string, string> resolutionOptions)
     {
@@ -26,6 +26,11 @@ public sealed class PatchViewModel
     public bool IncludeFovFix { get; set; }
 
     public IReadOnlyList<string> AvailableResolutions => _resolutionOptions.Keys.OrderBy(name => name).ToList();
+
+    public void UpdateResolutionOptions(IReadOnlyDictionary<string, string> newOptions)
+    {
+        _resolutionOptions = newOptions ?? _resolutionOptions;
+    }
 
     public PatchValidationResult ValidatePatchRequest()
     {
