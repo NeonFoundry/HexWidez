@@ -134,17 +134,6 @@ public sealed class PatchService : IPatchService
         return new PatchResult(replacements, string.Empty);
     }
 
-    //private int ApplyPatchToBuffer(byte[] bytes, IEnumerable<HexPatchOperation> operations)
-    //{
-    //    int replacementCount = 0;
-    //    foreach (HexPatchOperation operation in operations)
-    //    {
-    //        replacementCount += ApplyReplacement(bytes, operation.FindHex, operation.ReplaceHex).ReplacementCount;
-    //    }
-
-    //    return replacementCount;
-    //}
-
     private string CreateBackup(string sourcePath)
     {
         string directory = _fileSystem.GetDirectoryName(sourcePath) ?? AppDomain.CurrentDomain.BaseDirectory;
@@ -211,7 +200,7 @@ public sealed class PatchService : IPatchService
     {
         if (hexString.Length % 2 != 0)
         {
-            throw new ArgumentException($"The binary key cannot have an odd number of digits: {hexString}");
+            throw new ArgumentException($"The binary key should have even number of digits : {hexString}");
         }
 
         byte[] data = new byte[hexString.Length / 2];
