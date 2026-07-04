@@ -1,19 +1,15 @@
 <div align="center">
-
-# 🟣 ⚡ **HEXWIDE** ⚡ 🔷
-
-### `> Binary Patching Utility for Ultrawide & Super Ultrawide Gaming`
+<p align="Center">
+    <img src="/HexWide/Assets/Images/HexWide.svg" alt="PayPal QR Code" width="900">
+</p>
+<b>Binary Patching Utility for Ultrawide & Super Ultrawide Gaming</b>
+<br>
+<br>
 
 ![GitHub release](https://img.shields.io/github/v/release/YOUR_USERNAME/HexWide?style=for-the-badge\&color=00F5FF)
 ![License](https://img.shields.io/github/license/YOUR_USERNAME/HexWide?style=for-the-badge\&color=FF2BD6)
 ![Platform](https://img.shields.io/badge/Platform-Windows-00F5FF?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-8.0-FF2BD6?style=for-the-badge)
-
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║  PATCH ▓ BACKUP ▓ VERIFY ▓ PLAY WIDER                              ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
 
 *Modify game executables safely with automatic backups and one-click ultrawide patches.*
 
@@ -23,9 +19,22 @@
 
 ## 💾 Donate
 
-If HexWide has saved you time or improved your gaming experience, consider buying me a coffee.
+If HexWide has saved you time or improved your gaming experience, consider supporting Neon Foundry.
+<p align="Center">
+  <img src="/HexWide/Assets/Images/paypal-qrcode.png" alt="PayPal QR Code" width="220">
+</p>
 
-<img src="/HexWide/Assets/Images/paypal-qrcode.png" width="220">
+<h2>Installation and Usage</h2>
+
+Download and unzip the HexWide exe file to a location of your choice.  The exe will run directly from the folder.
+
+Select your game exe and resolution (optionally select field of view adjustment) and then click "Patch".
+
+The tool will search for the default "find" hex code which is '3B 8E E3 3F' (corresponding to 16:9 aspect ratio) and replaces this with your chosen resolution's hex value.
+
+Both the "find" hex string and "replace" hex string/resolution combinations can be customised for different exe files if necessary.
+
+It is also possible to modify the "find" and "replace" hex strings of view hex strings.
 
 <h3>Disclaimer</h3>
 
