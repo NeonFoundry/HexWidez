@@ -44,7 +44,7 @@
             <Setter Property="Foreground" Value="#FF06B5"/>
             <Setter Property="Padding" Value="10,8"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontSize" Value="40"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -65,6 +65,14 @@
             </Setter>
         </Style>
         <local:WidthToFontSizeConverter x:Key="WidthToFontSizeConverter"/>
+        <Style x:Key="ResponsiveLabelTextBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource WidthToFontSizeConverter}, ConverterParameter=34}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FFF7AC"/>
+            <Setter Property="Background" Value="#000000"/>
+            <Setter Property="BorderBrush" Value="#FF06B5"/>
+            <Setter Property="Height" Value="70"/>
+        </Style>
         <Style x:Key="ResponsiveTitleTextBlock" TargetType="TextBlock">
             <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource WidthToFontSizeConverter}, ConverterParameter=34}"/>
         </Style>
@@ -80,10 +88,18 @@
             <Setter Property="Foreground" Value="#FF06B5"/>
         </Style>
         <Style x:Key="ResponsiveCheckBox" TargetType="CheckBox">
-            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource WidthToFontSizeConverter}, ConverterParameter=17}"/>
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource WidthToFontSizeConverter}, ConverterParameter=8}"/>
             <Setter Property="Foreground" Value="#FFF7AC"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="0,12,0,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </Setter.Value>
+            </Setter>
         </Style>
-        
+
         <Style x:Key="ResponsiveCaptionTextBlock" TargetType="TextBlock">
             <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource WidthToFontSizeConverter}, ConverterParameter=8}"/>
         </Style>
@@ -256,12 +272,20 @@
                 </Grid.ColumnDefinitions>
 
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="36,12,24,12">
-                        <TextBlock Text="HEXWIDE" Style="{StaticResource ResponsiveTitleTextBlock}" FontWeight="Bold" />
-                        <TextBlock Text="Ultrawide resolution patcher" Style="{StaticResource ResponsiveSectionHeaderTextBlock}" Margin="0,6,0,16"/>
-                        <TextBlock Text="Select a compatible executable, choose an aspect ratio, and patch it with an automatic backup created beforehand." TextWrapping="Wrap" Style="{StaticResource ResponsiveBodyTextBlock}" Margin="0,0,0,24"/>
+                    <Grid Margin="36,12,24,12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                        <Border Background="#000000" BorderBrush="#FF06B5" BorderThickness="1" Padding="16" Margin="0,0,0,16">
+                        <TextBlock Grid.Row="0" Text="HEXWIDE" Style="{StaticResource ResponsiveTitleTextBlock}" FontWeight="Bold" />
+                        <TextBlock Grid.Row="1" Text="Ultrawide resolution patcher" Style="{StaticResource ResponsiveSectionHeaderTextBlock}" Margin="0,6,0,16"/>
+                        <TextBlock Grid.Row="2" Text="Select a compatible executable, choose an aspect ratio, and patch it with an automatic backup created beforehand." TextWrapping="Wrap" Style="{StaticResource ResponsiveBodyTextBlock}" Margin="0,0,0,24"/>
+
+                        <Border Grid.Row="3" Background="#000000" BorderBrush="#FF06B5" BorderThickness="1" Padding="16" Margin="0,0,0,16">
                             <StackPanel>
 
                                 <TextBlock Text="• Automatic backup before patching" Style="{StaticResource ResponsiveBodyTextBlock}" FontWeight="SemiBold" Margin="0,0,0,6"/>
@@ -269,44 +293,73 @@
                             </StackPanel>
                         </Border>
 
-                        <Border Background="#000000" BorderBrush="#F9F002" BorderThickness="1" Padding="16" Opacity="1">
+                        <Border Grid.Row="4" Background="#000000" BorderBrush="#F9F002" BorderThickness="1" Padding="16" Opacity="1" VerticalAlignment="Bottom">
                             <StackPanel>
-                                <TextBlock Text="The patcher will only work with executables encoding aspect ratio in a certain way using a particular hex code." Style="{StaticResource ResponsiveLabelTextBlock}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                                <TextBlock Text="The patcher is intended to work with executables and not configuration files" Style="{StaticResource ResponsiveLabelTextBlock}" FontWeight="SemiBold" TextWrapping="Wrap"/>
                             </StackPanel>
                         </Border>
-                    </StackPanel>
+                    </Grid>
                 </ScrollViewer>
 
                 <Border Grid.Column="1" Margin="0,12,24,12" Background="#000000" BorderBrush="#FF06B5" BorderThickness="1.2">
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <StackPanel Margin="28">
-                            <TextBlock Text="Patch configuration" Style="{StaticResource ResponsiveSectionHeaderTextBlock}" FontWeight="SemiBold" Margin="0,0,0,18"/>
+                        <Grid Margin="28">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-                            <TextBlock Text="Target executable" Style="{StaticResource ResponsiveLabelTextBlock}" Margin="0,0,0,6"/>
-                            <Grid Margin="0,0,0,12">
+                            <TextBlock Grid.Row="0" Text="Patch configuration" Style="{StaticResource ResponsiveSectionHeaderTextBlock}" FontWeight="SemiBold" Margin="0,0,0,18"/>
+
+                            <TextBlock Grid.Row="1" Text="Target executable" Style="{StaticResource ResponsiveLabelTextBlock}" Margin="0,0,0,6"/>
+                            <Grid Grid.Row="2" Margin="0,0,0,12">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBox x:Name="txtPath" Grid.Column="0"/>
-                                <Button Grid.Column="1" Content="Browse" MinWidth="120" Margin="8,0,0,12"  Style="{StaticResource ResponsiveButton}" Click="BrowseButton_Click"/>
+                                <TextBox
+                                    x:Name="txtPath"
+                                    Grid.Column="0"
+                                    Style="{StaticResource ResponsiveLabelTextBox}"/>
+                                <Button Grid.Column="1" Content="Browse" MinWidth="120" Margin="8,12,0,12"  Style="{StaticResource ResponsiveButton}" Click="BrowseButton_Click"/>
                             </Grid>
 
-                            <TextBlock Text="Resolution" Style="{StaticResource ResponsiveLabelTextBlock}" Margin="0,0,0,6"/>
-                            <ComboBox x:Name="comboResolutions"/>
+                            <TextBlock Grid.Row="3" Text="Resolution" Style="{StaticResource ResponsiveLabelTextBlock}" Margin="0,0,0,6"/>
 
-                            <CheckBox x:Name="chkFovFix" Content="Apply FOV compensation" Style="{StaticResource ResponsiveCheckBox}"/>
+                            <ComboBox Grid.Row="4"
+                                x:Name="comboResolutions"
+                                Height="55"
+                                FontFamily="Consolas"
+                                FontSize="40"
+                                FontWeight="SemiBold"
+                                Foreground="#FF06B5"
+                                Background="#111111"
+                                BorderBrush="#FF06B5"
+                                BorderThickness="2"
+                                Padding="8,4"
+                            />
+                            
+                            <StackPanel Grid.Row="5" VerticalAlignment="Bottom">
+                                <CheckBox
+                                    x:Name="chkFovFix"
+                                    Content="Apply FOV compensation"
+                                    Style="{StaticResource ResponsiveCheckBox}" 
+                                    />
+                                <Button Content="Patch executable" Click="ApplyButton_Click" Style="{StaticResource ResponsiveButton}" Margin="0,8,0,0"/>
 
-                            <Button Content="Patch executable" Click="ApplyButton_Click" Style="{StaticResource ResponsiveButton}" Margin="0,8,0,0"/>
-
-                            <Border Margin="0,18,0,0" Background="#000000" BorderBrush="#F9F002" BorderThickness="1" Padding="12">
-                                <StackPanel>
-                                    <TextBlock x:Name="statusMessage" Style="{StaticResource ResponsiveStatusMessage}" Text="Select an executable to get started." TextWrapping="Wrap"/>
-                                    <ProgressBar x:Name="patchProgressBar" Height="8" Margin="0,10,0,6" Minimum="0" Maximum="100" Value="0" Visibility="Collapsed"/>
-                                    <TextBlock x:Name="progressLabel" Text="" Margin="0,2,0,0" Foreground="#FFE96B" Visibility="Collapsed"/>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
+                                <Border Margin="0,18,0,0" Background="#000000" BorderBrush="#F9F002" BorderThickness="1" Padding="12">
+                                    <StackPanel>
+                                        <TextBlock x:Name="statusMessage" Style="{StaticResource ResponsiveStatusMessage}" Text="> Select an executable to get started" TextWrapping="Wrap"/>
+                                        <ProgressBar x:Name="patchProgressBar" Height="8" Margin="0,10,0,6" Minimum="0" Maximum="100" Value="0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="progressLabel" Text="" Margin="0,2,0,0" Foreground="#FFE96B" Visibility="Collapsed"/>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </Grid>
                     </ScrollViewer>
                 </Border>
             </Grid>
