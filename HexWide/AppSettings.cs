@@ -13,7 +13,7 @@ public sealed class AppSettings
     public bool EnableFovCompensationByDefault { get; set; }
     public string LogFilePath { get; set; } = "logs/hexwide-.log";
     public int MaxLogFileCount { get; set; } = 7;
-    public string AspectFindHex { get; set; } = "3B 8E E3 3F";
+    public string AspectFindHex { get; set; } = "39 8E E3 3F";
     public string FovFindHex { get; set; } = "35 FA 0E 3C AC C5 27 37 6F";
     public string FovReplaceHex { get; set; } = "35 FA 3E 3C AC C5 27 37 6F";
     public bool ShowPatchWarning { get; set; } = true;
