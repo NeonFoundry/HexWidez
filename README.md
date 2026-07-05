@@ -19,12 +19,26 @@
 
 ## 💾 Donate
 
-If HexWide has saved you time or improved your gaming experience, consider supporting Neon Foundry.
 <p align="Center">
-  <img src="/HexWide/Assets/Images/paypal-qrcode.png" alt="PayPal QR Code" width="220">
+    If HexWide has saved you time or improved your gaming experience, consider supporting Neon Foundry :
 </p>
 
-BTC: 32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
+<p align="Center">
+  <a href="https://www.paypal.com/qrcodes/managed/5eb8a049-15d4-4496-abcc-0a7fb33bcc62?utm_source=consweb_more"><img src="/HexWide/Assets/Images/paypal-qrcode.png" alt="PayPal QR Code" width="220"></a>
+</p>
+
+<p align="Center">
+  <a href="https://www.paypal.com/qrcodes/managed/5eb8a049-15d4-4496-abcc-0a7fb33bcc62?utm_source=consweb_more">https://www.paypal.com/qrcodes/managed/5eb8a049-15d4-4496-abcc-0a7fb33bcc62?utm_source=consweb_more</a>
+</p>
+
+<p align="Center">
+  <img src="/HexWide/Assets/Images/BTC-Logo.png" alt="PayPal QR Code" width="220"><a href="bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm"><img src="/HexWide/Assets/Images/BTC-QR.png" alt="PayPal QR Code" width="220"></a>
+</p>
+
+<p align="Center">
+  <a href="bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm"><b>bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm</b></a>
+</p>
+
 
 <h2>Installation and Usage</h2>
 
