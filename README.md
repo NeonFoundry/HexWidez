@@ -11,7 +11,7 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-00F5FF?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-10.0-FF2BD6?style=for-the-badge)
 
-*Modify game executables safely with automatic backups and one-click ultrawide patches.*
+*Modify game executables safely with automatic backups and one-click ultrawide patches.  No more black borders means more immersion.*
 
 </div>
 
@@ -35,6 +35,8 @@ The tool will search for the default "find" hex code which is '3B 8E E3 3F' (cor
 Both the "find" hex string and "replace" hex string/resolution combinations can be customised for different exe files if necessary.
 
 It is also possible to modify the "find" and "replace" hex strings of view hex strings.
+
+Default settings support 21:9, 32:9 and other aspect ratios in a range of resolutions.
 
 <h3>Disclaimer</h3>
 
