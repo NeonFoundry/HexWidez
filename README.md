@@ -6,8 +6,8 @@
 <br>
 <br>
 
-![GitHub release](https://img.shields.io/github/v/release/NeonFoundry/HexWide?style=for-the-badge\&color=00F5FF)
-![License](https://img.shields.io/github/license/NeonFoundry/HexWide?style=for-the-badge\&color=FFFFA7)
+![GitHub release](https://img.shields.io/github/v/release/NeonFoundry/HexWidez?style=for-the-badge\&color=00F5FF)
+![License](https://img.shields.io/github/license/NeonFoundry/HexWidez?style=for-the-badge\&color=FFFFA7)
 ![Platform](https://img.shields.io/badge/Platform-Windows-00F5FF?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-10.0-FF2BD6?style=for-the-badge)
 
@@ -23,6 +23,8 @@ If HexWide has saved you time or improved your gaming experience, consider suppo
 <p align="Center">
   <img src="/HexWide/Assets/Images/paypal-qrcode.png" alt="PayPal QR Code" width="220">
 </p>
+
+BTS: 32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
 
 <h2>Installation and Usage</h2>
 
