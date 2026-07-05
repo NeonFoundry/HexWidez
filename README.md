@@ -32,13 +32,20 @@
 </p>
 
 <p align="Center">
-  <img src="/HexWide/Assets/Images/BTC-Logo.png" alt="PayPal QR Code" width="220"><a href="bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm"><img src="/HexWide/Assets/Images/BTC-QR.png" alt="PayPal QR Code" width="220"></a>
+  <img src="/HexWide/Assets/Images/BTC-Logo.png" alt="BTC Logo" width="220"><a href="bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm"><img src="/HexWide/Assets/Images/BTC-QR.png" alt="BTC QR Code" width="220"></a>
 </p>
 
 <p align="Center">
-  <a href="bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm"><b>bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm</b></a>
+      <code>
+          bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
+      </code>                                            
 </p>
 
+<p align="center">
+  <a href="https://mempool.space/address/32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm">
+    Verify this Bitcoin address on mempool.space
+  </a>
+</p>
 
 <h2>Installation and Usage</h2>
 
