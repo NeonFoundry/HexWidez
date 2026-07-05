@@ -36,9 +36,8 @@
 </p>
 
 <p align="Center">
-      <code>
-          bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
-      </code>                                            
+      <code>bitcoin:32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm</code>                                            
+      BTC<code>32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm</code>
 </p>
 
 <p align="center">
