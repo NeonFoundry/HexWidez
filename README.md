@@ -24,7 +24,7 @@ If HexWide has saved you time or improved your gaming experience, consider suppo
   <img src="/HexWide/Assets/Images/paypal-qrcode.png" alt="PayPal QR Code" width="220">
 </p>
 
-BTS: 32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
+BTC: 32kD65v7LwMZwRCZGY5CbqearGDYKr3xAm
 
 <h2>Installation and Usage</h2>
 
