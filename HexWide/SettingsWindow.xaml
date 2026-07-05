@@ -1,7 +1,7 @@
 <Window x:Class="HexWide.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Settings" Height="480" Width="720" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Settings" Height="750" Width="720" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -30,8 +30,35 @@
             </GroupBox>
 
             <StackPanel Grid.Column="1">
+                <GroupBox Header="Custom Resolution" Margin="0,0,0,12">
+                    <StackPanel Margin="8">
+                        <TextBlock Text="Width (X)" FontSize="12" FontWeight="Bold"/>
+                        <TextBox x:Name="txtCustomX" Margin="0,4,0,8" Height="24"/>
+
+                        <TextBlock Text="Height (Y)" FontSize="12" FontWeight="Bold"/>
+                        <TextBox x:Name="txtCustomY" Margin="0,4,0,8" Height="24"/>
+
+                        <Button Content="Calculate &amp; Add" x:Name="calculateButton" Click="CalculateCustomResolution_Click" Margin="0,8,0,0" Height="28"/>
+                        <TextBlock x:Name="calculatedHexLabel" Margin="0,8,0,0" TextWrapping="Wrap" Foreground="Green" MinHeight="24"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Select Resolution" Margin="0,0,0,12">
+                    <StackPanel Margin="8">
+                        <TextBlock Text="Available Resolutions" FontSize="12" FontWeight="Bold" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="resolutionComboBox" Height="32" SelectionChanged="ResolutionComboBox_SelectionChanged" Margin="0,0,0,8"/>
+                        <TextBlock x:Name="selectedResolutionLabel" Margin="0,0,0,0" TextWrapping="Wrap" Foreground="CornflowerBlue" MinHeight="24" FontWeight="Bold"/>
+                    </StackPanel>
+                </GroupBox>
+
                 <GroupBox Header="Patch Find/Replace" Margin="0,0,0,12">
                     <StackPanel Margin="8">
+                        <TextBlock Text="Aspect ratio find preset"/>
+                        <ComboBox x:Name="aspectFindComboBox"
+                          Height="28"
+                          Margin="0,4,0,8"
+                          SelectionChanged="AspectFindComboBox_SelectionChanged"/>
+
                         <TextBlock Text="Aspect ratio find hex"/>
                         <TextBox x:Name="txtAspectFind" Margin="0,4,0,8"/>
 
