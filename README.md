@@ -6,9 +6,9 @@
 <br>
 <br>
 
-![GitHub release](https://img.shields.io/github/v/release/NeonFoundry/HexWidez?style=for-the-badge\&color=00F5FF)
-![License](https://img.shields.io/github/license/NeonFoundry/HexWidez?style=for-the-badge\&color=FFFFA7)
-![Platform](https://img.shields.io/badge/Platform-Windows-00F5FF?style=for-the-badge)
+![GitHub release](https://img.shields.io/github/v/release/NeonFoundry/HexWidez?style=for-the-badge\&color=FF06B5)
+![License](https://img.shields.io/github/license/NeonFoundry/HexWidez?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows-FFF5A7?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-10.0-FF2BD6?style=for-the-badge)
 
 *Modify game executables safely with automatic backups and one-click ultrawide patches.  No more black borders means more immersion.*
